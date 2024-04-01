@@ -13,6 +13,7 @@ body {
   
   .navbar {
     background-color: #343a40;
+    margin-bottom: 20px;
   }
   
   .navbar-brand {
@@ -21,10 +22,22 @@ body {
   }
   
   .navbar-nav .nav-link {
-    color: #ec8a8a; 
+    color: #ffffff; 
     font-size: 16px;
   }
   
   .navbar-nav .nav-link:hover {
     color: #ffffff;
   }
+
+  .carousel {
+    max-width: 900px; 
+    margin: auto; 
+  }
+  
+  .carousel-item img {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+  }
+  
