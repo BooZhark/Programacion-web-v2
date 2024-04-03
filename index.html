@@ -42,10 +42,31 @@
               <li class="nav-item">
                 <a class="nav-link" href="#iniciar-sesion">Iniciar Sesión</a>
               </li>
+          
+                <li class="nav-item">
+                <a class="nav-link" href="#"
+                id="carrito-img" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvas"
+                aria-controls="offcanvas">
+              <img src="img/carrito.png"
+              width="37" height="37" alt="Carrito de compras">
+              </a>
+              </li>
+              
             </ul>
           </div>
         </div>
       </nav>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasLabel">Carrito de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>Tu carrito esta vacio</p>
+        </div>
+      </div>
 
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
