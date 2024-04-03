@@ -40,4 +40,31 @@ body {
     height: auto; 
     object-fit: contain; 
   }
+h1{
+  color:black;
+  text-align: center;
+  margin: 35px;
   
+}
+h2{
+  color: black;
+  text-align: center;
+  margin: -39px;
+}
+h3{
+  color: black;
+  margin-top: 90px;
+  margin-left: 50px;
+  font-weight: bold;
+}
+p{
+  color: black;
+  margin-left: 10px;
+  padding: 20px 12px;
+  background-color:white;
+  border-radius: 20px;
+  border: 1.5px solid;
+}
+.sbsede{
+  list-style: none;
+}
