@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Bienvenido de nuevo</h1>
+        <form>
+            <div class="mb-3">
+                <label for="inputEmail" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="inputPassword" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="inputPassword">
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">¿Olvidó su contraseña?</button>
+        </form>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Recuperar contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Ingrese su email para recuperar su contraseña:</p>
+                    <input type="email" class="form-control mb-2" placeholder="Correo electrónico">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3 text-center">
+        <p>¿Aún no tienes cuenta? <a href="#link" class="btn btn-secondary">Registrarse</a></p>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
