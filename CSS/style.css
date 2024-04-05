@@ -43,7 +43,7 @@ body {
 h1{
   color:black;
   text-align: center;
-  margin: 35px;
+  margin: 25px;
   
 }
 h2{
@@ -54,15 +54,15 @@ h2{
 h3{
   color: black;
   margin-top: 90px;
-  margin-left: 50px;
+  margin-left: 30px;
   font-weight: bold;
 }
-p{
+.lorem-borde p {
   color: black;
-  margin-left: 10px;
-  padding: 20px 12px;
-  background-color:white;
-  border-radius: 20px;
+  margin-right: 0px;
+  border: 1px solid black; 
+  border-radius: 10px; 
+  padding: 10px;
 }
 .sbsede{
   list-style: none;
@@ -75,4 +75,14 @@ p{
   width: 100%;
   max-height: 300px;
   object-fit: cover;
+}
+.img-borde {
+  border: 2px solid black; /* Borde de 2px de ancho y color negro */
+  border-radius: 10px; /* Borde redondeado */
+}
+.bodyc{
+margin-top: 100px;
+}
+.bodyc h2{
+  margin-bottom: 50px;
 }

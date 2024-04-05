@@ -1,51 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Enlaces a las hojas de estilo CSS -->
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-
-<body>
-
-    <header>
-      <!---
-      Aqui poner la navbar-->
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-
-                <h3>Acerca de nosotros</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ratione accusamus consectetur nostrum
-                    dolorum
-                    mollitia natus fugiat laborum illo ipsam, perferendis corporis, illum libero facere, est quod. Hic,
-                    dolorem
-                    incidunt!
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequuntur nulla cum excepturi
-                    reprehenderit provident ea natus magnam, aliquam dolorem, quisquam aliquid amet nihil, eos
-                    veritatis? Odio
-                    pariatur quaerat odit!
-                </p>
-            </div>
-            <div class="col-md-6">
-
-            </div>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="img/moai.png" width="50" height="35" class="d-inline-block align-top" alt="Logo"> J&T GamingWelt
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
+              <li class="nav-item">
+                <a class="nav-link active me-2" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-2" href="sbnosotros.html">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-2" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorias
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="tarjvideo.html">Tarjetas de video</a></li>
+                  <li><a class="dropdown-item" href="monitores.html">Monitores</a></li>
+                  <li><a class="dropdown-item" href="#perifericos">Periféricos</a></li>
+                  <li><a class="dropdown-item" href="#sillas-gamer">Sillas gamer</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-2" href="login.html">Iniciar Sesión</a>
+              </li>
+          
+                <li class="nav-item">
+                <a class="nav-link" href="#"
+                id="carrito-img" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvas"
+                aria-controls="offcanvas">
+              <img src="img/carrito.png"
+              width="37" height="37" alt="Carrito de compras">
+              </a>
+              </li>
+              
+            </ul>
+          </div>
         </div>
-    </div>
-    <h3>Unica sede de J&T</h3>
-    <ul class="sbsede">
-        <li>J&T GAMINGWELT S.A</li>
-        <li>Matilde Salamanca 633-699</li>
-        <li>office@j&tgamingwelt.com</li>
-        <li><img src="https://www.google.com/maps/d/thumbnail?mid=1rryIcuVsmE05onciKauO-fWbeW8&hl=en_US" alt=""
-                width="300" height="300"></li>
-    </ul>
-</body>
-
+      </nav>
+</header>
+<body>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-12 text-center">
+            <h1>J&T</h1>
+            <h2>Gamingwelt</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Contenido de la columna izquierda -->
+                        <div class="lorem-borde">
+                            <h3 class="text-left">Acerca de nosotros</h3>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ratione accusamus consectetur nostrum
+                                dolorum mollitia natus fugiat laborum illo ipsam, perferendis corporis, illum libero facere, est
+                                quod. Hic, dolorem incidunt!
+                                <br><br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequuntur nulla cum excepturi
+                                reprehenderit provident ea natus magnam, aliquam dolorem, quisquam aliquid amet nihil, eos
+                                veritatis? Odio pariatur quaerat odit!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Contenido de la columna derecha -->
+                        <h3>Unica sede de J&T</h3>
+                        <ul class="sbsede">
+                            <!-- Detalles de la sede -->
+                            <li>J&T GAMINGWELT S.A</li>
+                            <li>Matilde Salamanca 633-699</li>
+                            <li>office@j&tgamingwelt.com</li>
+                            <li><img src="https://www.google.com/maps/d/thumbnail?mid=1rryIcuVsmE05onciKauO-fWbeW8&hl=en_US" alt=""
+                                width="300" height="300" class="img-borde"></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </body>
 </html>
