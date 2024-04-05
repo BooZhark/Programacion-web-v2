@@ -77,8 +77,8 @@ h3{
   object-fit: cover;
 }
 .img-borde {
-  border: 2px solid black; /* Borde de 2px de ancho y color negro */
-  border-radius: 10px; /* Borde redondeado */
+  border: 2px solid black; 
+  border-radius: 10px; 
 }
 .bodyc{
 margin-top: 100px;
