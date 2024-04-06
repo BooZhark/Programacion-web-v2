@@ -42,7 +42,6 @@
               <li class="nav-item">
                 <a class="nav-link active me-2" href="login.html">Iniciar Sesión</a>
               </li>
-          
                 <li class="nav-item">
                 <a class="nav-link" href="#"
                 id="carrito-img" data-bs-toggle="offcanvas"
@@ -52,12 +51,20 @@
               width="37" height="37" alt="Carrito de compras">
               </a>
               </li>
-              
             </ul>
           </div>
         </div>
       </nav>
-      
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasLabel">Carrito de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>Tu carrito esta vacio</p>
+        </div>
+      </div>
+
     <div class="container mt-5">
         <h1 class="text-center mb-4">Los mejores monitores</h1>
         <div class="row">
