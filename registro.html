@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <form action="" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5">
+                <div class="my-3">
+                    <h4>Formulario de registro</h4>
+                </div>
+                <div class="form-floating w-50 mx-auto mb-3">
+                    <input type="text" class="form-control" id="txtRut" name="txtRut" placeholder="Ingrese su rut"
+                        required>
+                    <label for="txtRut">Rut</label>
+                </div>
+                <div class="form-floating w-50 mx-auto mb-3">
+                    <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre"
+                        required>
+                    <label for="txtNombre">Nombre</label>
+                </div>
+                <div class="row mx-auto">
+                    <div class="col mb-3">
+                        <div class="form-floating w-50 ms-auto">
+                            <input type="text" class="form-control" id="txtAppaterno" name="txtAppaterno"
+                                placeholder="Apellido paterno" required>
+                            <label for="txtAppaterno">Apellido paterno</label>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="form-floating w-50">
+                            <input type="text" class="form-control" id="txtApmaterno" name="txtApmaterno"
+                                placeholder="Apellido materno" required>
+                            <label for="txtApmaterno">Apellido materno</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating w-50 mx-auto mb-3">
+                    <input type="email" class="form-control" id="txtMail" name="txtMail" placeholder="Correo" required>
+                    <label for="txtMail">Correo</label>
+                </div>
+                <div class="form-floating w-50 mx-auto mb-3">
+                    <input type="number" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono"
+                        required>
+                    <label for="txtTelefono">Telefono</label>
+                </div>
+                <!-- Nuevo campo de dirección -->
+                <div class="form-floating w-50 mx-auto mb-3">
+                    <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" placeholder="Dirección"
+                        required>
+                    <label for="txtDireccion">Dirección</label>
+                </div>
+                <div id="check"></div>
+                <div class="w-50 mx-auto mb-3">
+                    <button type="button" id="btnEnviar" class="btn btn-outline-primary">Limpiar formulario</button>
+                    <button type="button" id="btnGenerar" class="btn btn-outline-success">Registrar</button>
+                </div>
+            </form>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-center mx-auto" id="exampleModalLabel">Registro completo!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="w-50 text-center mx-auto" id="res"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script> 
+    <script src="js/funciones.js"></script>
+</body>
+
+</html>
