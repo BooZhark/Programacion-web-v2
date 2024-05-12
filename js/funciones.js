@@ -18,12 +18,12 @@ $(document).ready(function () {
             $("#res").append("Telefono: " + telefono + "<br>");
             $("#res").append("</p>");
 
-            // Limpiar campos del formulario
+            
             $("#formulario")[0].reset();
         }
     });
 
-    function validarDatos(rut, nombre, appaterno, apmaterno, celular) {
+    function validarDatos(rut, nombre, appaterno, apmaterno, celular, direccion) {
         if (String(rut).length < 9 || String(rut).length > 10) {
             /* Validacion Rut */
             $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Rut debe tener largo entre 9 y 10 caracteres</div>");
@@ -39,13 +39,15 @@ $(document).ready(function () {
         }   else if (String(celular).length < 9 || String(celular).length > 12) {
             /* Validacion Celular */
             $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Telefono debe tener entre 9 y 12 digitos</div>");
-        } else {
+        }  
+        else {
             /* Confirmacion */
             return true;
         }
+        
     }
     
-    // Limpiar campos del formulario al hacer clic en el botón "Limpiar formulario"
+   
     $("#btnEnviar").click(function () {
         $("#formulario")[0].reset();
     });
