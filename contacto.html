@@ -6,20 +6,6 @@
     <title>Contacto</title>
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="js/funciones.js"></script>
-    <script>
-      $(document).ready(function() {
-          $("form").submit(function(event) {
-              var nombre = $("#nombre").val().trim();
-              var email = $("#email").val().trim();
-              var mensaje = $("#mensaje").val().trim();
-      
-              if (!validarContacto(nombre, email, mensaje)) {
-                  event.preventDefault();
-              }
-          });
-      });
-      </script>
   </head>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -110,17 +96,18 @@
             <form action="" method="post">
               <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombrec" name="nombre" class="form-control" required>
+                <input type="text" id="nombrec" name="nombrec" class="form-control" required>
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="emailc" name="email" class="form-control" required>
+                <input type="email" id="emailc" name="emailc" class="form-control" required>
               </div>
               <div class="form-group">
                 <label for="mensaje">Mensaje:</label>
-                <textarea id="mensajec" name="mensaje" class="form-control" rows="5" required></textarea>
+                <textarea id="mensajec" name="mensajec" class="form-control" rows="5" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Enviar</button>
+              <div id="check"></div>
+                    <button type="button" id="botoncontacto" class="btn btn-outline-success">Enviar</button>
             </form>
           </div>
         </div>
@@ -131,5 +118,7 @@
       </div>
     </footer>
       <script src="js/bootstrap.bundle.js"></script>
+      <script src="js/jquery-3.7.1.min.js"></script>
+      <script src="js/funciones.js"></script>
   </body>
 </html>

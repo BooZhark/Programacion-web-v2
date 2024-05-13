@@ -44,14 +44,31 @@ $(document).ready(function () {
         return email.includes('@');
     }
 
-    function validarContacto(nombrec, emailc, mensajec) {
-        if (nombrec.trim() === '' || nombrec.length > 30 || !/^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$/.test(nombre)) {
-            $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un nombre válido (máximo 30 caracteres, sin números ni puntos).</div>");
+    $("#botoncontacto").click(function(){
+        let nombree = $("#nombrec").val();
+        let emaill = $("#emailc").val();
+        let mensajee = $("#mensajec").val();
+        let res = validarContacto(nombree,emaill,mensajee);
+        if(res){
+            $("#exampleModal").modal("show");
+            $("#res").html("");
+            $("#res").append("<p>");
+            $("#res").append("Nombre: " + nombree  + "<br>");
+            $("#res").append("Correo: " + emaill + "<br>");
+            $("#res").append("Mensaje: " + mensajee + "<br>");
+            $("#res").append("</p>");
+            $("#formulario")[0].reset();
+        }
+        
+    })
+    function validarContacto(nombree, emaill, mensajee) {
+        if (String(nombree).length < 3 || String(nombree).length > 20) {
+            $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Nombre debe tener largo entre 3 y 20 caracteres</div>");
             return false;
-        } else if (emailc.trim() === '' || !/\S+@\S+\.com\S+/.test(email)) {
+        } else if (emaill.trim() === '' || !/\S+@\S+\.\S+/.test(emaill)) {
             $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un correo electrónico válido.</div>");
             return false;
-        } else if (mensajec.trim() === '' || mensajec.length > 300) {
+        } else if (mensajee.trim() === '' || mensajee.length > 300) {
             $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un mensaje válido (máximo 300 caracteres).</div>");
             return false;
         } else {
