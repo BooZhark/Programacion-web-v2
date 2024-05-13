@@ -14,9 +14,8 @@
               var email = $("#email").val().trim();
               var mensaje = $("#mensaje").val().trim();
       
-              // Llamada a la función validarContacto
               if (!validarContacto(nombre, email, mensaje)) {
-                  event.preventDefault(); // Evita el envío del formulario si la validación falla
+                  event.preventDefault();
               }
           });
       });
