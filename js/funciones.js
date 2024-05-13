@@ -6,7 +6,7 @@ $(document).ready(function () {
         let apmaterno = $("#txtApmaterno").val();
         let mail = $("#txtMail").val();
         let telefono = $("#txtTelefono").val();
-        let res = validarDatos(rut, nombre, appaterno, apmaterno, telefono, mail); 
+        let res = validarDatos(rut, nombre, appaterno, apmaterno, telefono, mail);
         if (res) {
             $("#exampleModal").modal("show");
             $("#res").html("")
@@ -42,6 +42,22 @@ $(document).ready(function () {
     
     function validarCorreo(email) {
         return email.includes('@');
+    }
+
+    function validarContacto(nombrec, emailc, mensajec) {
+        if (nombrec.trim() === '' || nombrec.length > 30 || !/^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$/.test(nombre)) {
+            $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un nombre válido (máximo 30 caracteres, sin números ni puntos).</div>");
+            return false;
+        } else if (emailc.trim() === '' || !/\S+@\S+\.com\S+/.test(email)) {
+            $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un correo electrónico válido.</div>");
+            return false;
+        } else if (mensajec.trim() === '' || mensajec.length > 300) {
+            $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un mensaje válido (máximo 300 caracteres).</div>");
+            return false;
+        } else {
+            $("#check").html("");
+            return true;
+        }
     }
 
     $("#btnEnviar").click(function () {
