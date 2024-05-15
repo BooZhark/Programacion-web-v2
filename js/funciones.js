@@ -65,14 +65,14 @@ $(document).ready(function () {
         if (String(nombree).length < 3 || String(nombree).length > 20) {
             $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Nombre debe tener largo entre 3 y 20 caracteres</div>");
             return false;
-        } else if (emaill.trim() === '' || !/\S+@\S+\.\S+/.test(emaill)) {
+        } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emaill))) {
             $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un correo electrónico válido.</div>");
             return false;
         } else if (mensajee.trim() === '' || mensajee.length > 300) {
             $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un mensaje válido (máximo 300 caracteres).</div>");
             return false;
         } else {
-            $("#check").html("");
+            $("#check").html("<div class='alert alert-success w-50 mx-auto text-center'>Mensaje enviado correctamente.</div>");
             return true;
         }
     }
