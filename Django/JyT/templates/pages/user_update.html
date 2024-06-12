@@ -43,18 +43,6 @@
                             <label for="fecha" class="form-label">Fecha</label>
                         </div>
                         <div class="form-floating mb-3 w-50 mx-auto">
-                            <select class="form-select" id="genero" name="genero">
-                                {% for tmp in generos %}
-                                {% if tmp.genero == usuario.id_genero.genero%}
-                                <option value="{{tmp.id_genero}}" selected>{{tmp.genero}}</option>
-                                {%else%}
-                                <option value="{{tmp.id_genero}}">{{tmp.genero}}</option>
-                                {% endif%}
-                                {% endfor %}
-                            </select>
-                            <label for="genero" class="form-label">Genero</label>
-                        </div>
-                        <div class="form-floating mb-3 w-50 mx-auto">
                             <input type="email" value={{usuario.email}} class="form-control" id="correo" name="correo">
                             <label for="correo" class="form-label">Correo</label>
                         </div>
