@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from .models import Usuario
 
 def index(request):
-    context = {}
+    context = {
+        "user": "",
+    }
     return render(request, "pages/index.html", context)
 
 def index(request):
