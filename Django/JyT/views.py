@@ -25,7 +25,6 @@ def user_add(request):
         nombre = request.POST["nombre"]
         appPaterno = request.POST["appPaterno"]
         appMaterno = request.POST["appMaterno"]
-        fechaNac = request.POST["fecha"]
         telefono = request.POST["telefono"]
         correo = request.POST["correo"]
         password = request.POST["password"]
@@ -38,7 +37,6 @@ def user_add(request):
             nombre=nombre,
             apellido_paterno=appPaterno,
             apellido_materno=appMaterno,
-            fecha_nacimiento=fechaNac,
             telefono=telefono,
             email=correo,
             password=password,
@@ -102,7 +100,6 @@ def user_update(request):
         nombre = request.POST["nombre"]
         appPaterno = request.POST["appPaterno"]
         appMaterno = request.POST["appMaterno"]
-        fechaNac = request.POST["fecha"]
         telefono = request.POST["telefono"]
         correo = request.POST["correo"]
         password = request.POST["password"]
@@ -116,7 +113,6 @@ def user_update(request):
             nombre=nombre,
             apellido_paterno=appPaterno,
             apellido_materno=appMaterno,
-            fecha_nacimiento=fechaNac,
             telefono=telefono,
             email=correo,
             password=password,
