@@ -131,30 +131,25 @@ def user_update(request):
         }
         return render(request, "pages/user_update.html", context)
 
-def index(request):
-    context = {}
-    return render(request, "pages/contacto.html", context)
+def contacto(request):
+    return render(request, 'contacto.html')
 
-def index(request):
+def login(request):
     context = {}
     return render(request, "pages/login.html", context)
 
-def index(request):
+def monitores(request):
     context = {}
     return render(request, "pages/monitores.html", context)
 
-def index(request):
+def registro(request):
     context = {}
     return render(request, "pages/registro.html", context)
 
-def index(request):
+def sbnosotros(request):
     context = {}
     return render(request, "pages/sbnosotros.html", context)
 
-def index(request):
+def tarjvideo(request):
     context = {}
     return render(request, "pages/tarjvideo.html", context)
-
-def index(request):
-    context = {}
-    return render(request, "pages/user_add.html", context)    
