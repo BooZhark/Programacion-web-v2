@@ -7,6 +7,9 @@ def index(request):
     }
     return render(request, "pages/index.html", context)
 
+def contacto(request):
+    return render(request, 'contacto.html')
+
 def crud(request):
     usuarios = Usuario.objects.all()
     context = {
@@ -126,9 +129,6 @@ def user_update(request):
             "usuario":obj,
         }
         return render(request, "pages/user_update.html", context)
-
-def contacto(request):
-    return render(request, 'contacto.html')
 
 def login(request):
     context = {}
