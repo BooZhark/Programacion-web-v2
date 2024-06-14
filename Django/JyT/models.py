@@ -7,9 +7,6 @@ class Usuario(models.Model):
     apellido_paterno = models.CharField(max_length=20)
     apellido_materno = models.CharField(max_length=20)
     fecha_nacimiento = models.DateField()
-    id_genero = models.ForeignKey(
-        "Genero", on_delete=models.CASCADE, db_column="IDGenero"
-    )
     telefono = models.CharField(max_length=12)
     email = models.EmailField(max_length=100, unique=True, blank=True, null=True)
     password = models.CharField(max_length=30)
