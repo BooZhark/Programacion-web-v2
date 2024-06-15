@@ -8,7 +8,8 @@ def index(request):
     return render(request, "pages/index.html", context)
 
 def contacto(request):
-    return render(request, 'contacto.html')
+    context = {}
+    return render(request, "pages/contacto.html", context)
 
 def crud(request):
     usuarios = Usuario.objects.all()
