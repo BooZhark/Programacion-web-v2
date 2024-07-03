@@ -20,3 +20,17 @@ class Usuario(models.Model):
             + " "
             + str(self.apellido_materno)
         )
+    
+class Producto(models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    descripcion = models.TextField()
+
+class Carrito(models.Model):
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
+
+class CarritoItem(models.Model):
+    carrito = models.ForeignKey(Carrito, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField(default=1)
+
