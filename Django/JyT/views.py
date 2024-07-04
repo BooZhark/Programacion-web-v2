@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Usuario
+from django.shortcuts import redirect, render,HttpResponse
+from .models import Producto, Usuario
+from .Carrito import Carrito
 
 def index(request):
     context = {
@@ -130,6 +131,34 @@ def user_update(request):
             "usuario":obj,
         }
         return render(request, "pages/user_update.html", context)
+    
+def tienda(request):
+        #return HttpResponse("hola funciona :) ")
+        productos = Producto.objects.all()
+        return render(request,"pages/tienda.html" , {'productos':productos})
+
+def agregar_producto(request,producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.agregar(producto)
+    return redirect("Tienda")
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.restar(producto)
+    return redirect("Tienda")
+
+def restar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.restar(producto)
+    return redirect("Tienda")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("Tienda")
 
 def login(request):
     context = {}

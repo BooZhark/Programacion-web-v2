@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
-  <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
 </head>
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'index' %}">
             <img src="{% static 'img/moai.png' %}" width="50" height="35" class="d-inline-block align-top" alt="Logo"> J&T GamingWelt
@@ -64,65 +64,42 @@
         </div>
     </div>
 </nav>
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasLabel">Carrito de compras</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <p>Tu carrito está vacío</p>
-    </div>
-  </div>
-</header>
-<body>
-  <h1>J&T</h1>
-  <h2>Gamingwelt</h2>
-  <div class="bodyc">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Contáctenos</h2>
-          <p>Estamos aquí para ayudarte. Si tienes alguna pregunta o consulta, no dudes en contactarnos.</p>
-          <ul>
-            <li>
-              <strong>Teléfono:</strong>+56912345678
-            </li>
-            <li>
-              <strong>Email:</strong> office@j&tgamingwelt.com
-            </li>
-            <li>
-              <strong>Dirección:</strong> Matilde Salamanca 633-699
-            </li>
-          </ul>
+        <div class="row">
+            <div class="col-12 align-self-center">
+                <h1>PRODUCTOS</h1>
+            </div>
         </div>
-        <div class="col-md-6">
-          <h2>Envíenos un mensaje</h2>
-          <form action="" method="post">
-            <div class="form-group">
-              <label for="nombre">Nombre:</label>
-              <input type="text" id="nombrec" name="nombrec" class="form-control" required>
+        <div class="row">
+            <div class="col-8">
+                <div class="row" style="padding: 16px 0;">
+                    <div class="col-12">
+                        <div class="row">
+                            {% for producto in productos %}
+                            <div class="col-6">
+                                <div class="card" style="height: 10rem; width: 23rem; margin: 5px 0px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ producto.nombrep }}</h5>
+                                        <p class="card-text">{{ producto.descripcion }}</p>
+                                        <p class="card-text">{{ producto.precio }}</p>
+                                        <a href="{% url 'Add' producto.id %}" class="btn btn-outline-success btn-sm">Agregar al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="emailc" name="emailc" class="form-control" required>
+            <div class="col-4">
+                {% include "carrito.html" %}
             </div>
-            <div class="form-group">
-              <label for="mensaje">Mensaje:</label>
-              <textarea id="mensajec" name="mensajec" class="form-control" rows="5" required></textarea>
-            </div>
-            <button type="button" id="botoncontacto" class="btn btn-outline-success">Enviar</button>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 J&T GamingWelt</p>
-    </div>
-  </footer>
-  <script src="{% static 'js/funciones.js' %}"></script>
-  <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+    
+    <script src="{% static 'js/funciones.js' %}"></script>
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 </body>
 </html>
