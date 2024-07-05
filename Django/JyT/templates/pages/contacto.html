@@ -19,22 +19,33 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active me-2" aria-current="page" href="{% url 'index' %}">Inicio</a>
-                </li>
-                <li>
-                    <a class="nav-link active me-2" href="{% url 'Tienda' %}">Catalogo</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active me-2" href="{% url 'sbnosotros' %}">Sobre nosotros</a>
+                    <a class="nav-link active" href="{% url 'Tienda' %}">Catalogo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active me-2" href="{% url 'contacto' %}">Contacto</a>
+                    <a class="nav-link active" href="{% url 'sbnosotros' %}">Sobre nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active me-2" href="{% url 'login' %}">Iniciar Sesión</a>
+                    <a class="nav-link active" href="{% url 'contacto' %}">Contacto</a>
                 </li>
+            </ul>
+            <ul class="navbar-nav me-auto">
+                {% if nombre_usuario %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Bienvenido {{ nombre_usuario }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'logout' %}">Cerrar sesión</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'login' %}">Iniciar Sesión</a>
+                </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="carrito-img" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
                         <img src="{% static 'img/carrito.png' %}" width="37" height="37" alt="Carrito de compras">
