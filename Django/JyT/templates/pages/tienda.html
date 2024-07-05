@@ -61,6 +61,7 @@
                             {% for producto in productos %}
                             <div class="col-6">
                                 <div class="card">
+                                    <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombrep }}">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ producto.nombrep }}</h5>
                                         <p class="card-text">{{ producto.descripcion }}</p>
