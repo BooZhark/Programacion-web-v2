@@ -12,59 +12,42 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'index' %}">
-        <img src="{% static 'img/moai.png' %}" width="50" height="35" class="d-inline-block align-top" alt="Logo"> J&T GamingWelt
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active me-2" aria-current="page" href="{% url 'index' %}">Inicio</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Categorias </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="{% url 'tarjvideo' %}">Tarjetas de video</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="{% url 'monitores' %}">Monitores</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#perifericos">Periféricos</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#sillas-gamer">Sillas gamer</a>
-              </li>
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/moai.png' %}" width="50" height="35" class="d-inline-block align-top" alt="Logo"> J&T GamingWelt
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active me-2" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                </li>
+                <li>
+                    <a class="nav-link active me-2" href="{% url 'Tienda' %}">Catalogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active me-2" href="{% url 'sbnosotros' %}">Sobre nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active me-2" href="{% url 'contacto' %}">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active me-2" href="{% url 'login' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="carrito-img" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+                        <img src="{% static 'img/carrito.png' %}" width="37" height="37" alt="Carrito de compras">
+                    </a>
+                </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active me-2" href="{% url 'sbnosotros' %}">Sobre nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active me-2" href="{% url 'contacto' %}">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active me-2" href="{% url 'login' %}">Iniciar Sesión</a>
-          </li>
-          <li>
-            <a class="nav-link active me-2" href="{% url 'Tienda' %}">Comprar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="carrito-img" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
-              <img src="{% static 'img/carrito.png' %}" width="37" height="37" alt="Carrito de compras">
-            </a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-        </form>
-      </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
     </div>
-  </nav>
+</nav>
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasLabel">Carrito de compras</h5>

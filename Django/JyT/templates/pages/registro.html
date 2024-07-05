@@ -24,22 +24,8 @@
                     <li class="nav-item">
                         <a class="nav-link active me-2" aria-current="page" href="{% url 'index' %}">Inicio</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Categorias </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="{% url 'tarjvideo' %}">Tarjetas de video</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{% url 'monitores' %}">Monitores</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#perifericos">Periféricos</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#sillas-gamer">Sillas gamer</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a class="nav-link active me-2" href="{% url 'Tienda' %}">Catalogo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active me-2" href="{% url 'sbnosotros' %}">Sobre nosotros</a>
@@ -49,9 +35,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active me-2" href="{% url 'login' %}">Iniciar Sesión</a>
-                    </li>
-                    <li>
-                        <a class="nav-link active me-2" href="{% url 'Tienda' %}">Comprar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="carrito-img" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
