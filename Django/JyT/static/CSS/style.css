@@ -74,7 +74,9 @@ h3 {
   list-style: none;
 }
 .card {
-  margin-bottom: 30px;
+  height: auto; 
+  width: 100%; 
+  margin-bottom: 30px; 
 }
 
 .card-img-top {
@@ -82,6 +84,24 @@ h3 {
   max-height: 300px;
   object-fit: cover;
 }
+
+.card-title {
+  font-size: 1.25rem; 
+  font-weight: bold; 
+}
+
+.card-text {
+  font-size: 1rem; 
+}
+
+.card-body {
+  padding: 1rem; 
+}
+
+.btn-sm {
+  font-size: 0.875rem; 
+}
+
 .img-borde {
   border: 2px solid black;
   border-radius: 10px;
