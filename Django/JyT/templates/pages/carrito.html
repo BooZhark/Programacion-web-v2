@@ -19,6 +19,7 @@
               <td>
                 <div>
                   <a href="{% url 'Add' value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
+                  <span>{{ value.cantidad }}</span>
                   <a href="{% url 'Sub' value.producto_id %}" class="badge btn btn-dark badge-dark">-</a>
                 </div>
               </td>
