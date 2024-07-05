@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render,HttpResponse
+from django.shortcuts import redirect, render, HttpResponse
 from .models import Producto, Usuario
 from .Carrito import Carrito
 

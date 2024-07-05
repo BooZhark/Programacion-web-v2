@@ -44,38 +44,40 @@ $(document).ready(function () {
         return email.includes('@');
     }
 
-    $("#botoncontacto").click(function(){
-        let nombree = $("#nombrec").val();
-        let emaill = $("#emailc").val();
-        let mensajee = $("#mensajec").val();
-        let res = validarContacto(nombree,emaill,mensajee);
-        if(res){
+    $("#botoncontacto").click(function () {
+        console.log("Botón contacto clicado");
+        let nombre = $("#nombrec").val();
+        let email = $("#emailc").val();
+        let mensaje = $("#mensajec").val();
+        let res = validarContacto(nombre, email, mensaje);
+        if (res) {
+            console.log("Validación exitosa");
             $("#exampleModal").modal("show");
             $("#res").html("");
             $("#res").append("<p>");
-            $("#res").append("Nombre: " + nombree  + "<br>");
-            $("#res").append("Correo: " + emaill + "<br>");
-            $("#res").append("Mensaje: " + mensajee + "<br>");
+            $("#res").append("Nombre: " + nombre + "<br>");
+            $("#res").append("Correo: " + email + "<br>");
+            $("#res").append("Mensaje: " + mensaje + "<br>");
             $("#res").append("</p>");
             $("#formulario")[0].reset();
         }
-        
-    })
-    function validarContacto(nombree, emaill, mensajee) {
-        if (String(nombree).length < 3 || String(nombree).length > 20) {
-            $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Nombre debe tener largo entre 3 y 20 caracteres</div>");
-            return false;
-        } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emaill))) {
-            $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un correo electrónico válido.</div>");
-            return false;
-        } else if (mensajee.trim() === '' || mensajee.length > 300) {
-            $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center' >Por favor ingresa un mensaje válido (máximo 300 caracteres).</div>");
-            return false;
-        } else {
-            $("#check").html("<div class='alert alert-success w-50 mx-auto text-center'>Mensaje enviado correctamente.</div>");
-            return true;
+    });
+    
+        function validarContacto(nombre, email, mensaje) {
+            if (String(nombre).length < 3 || String(nombre).length > 20) {
+                $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center'>Nombre debe tener largo entre 3 y 20 caracteres</div>");
+                return false;
+            } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
+                $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center'>Por favor ingresa un correo electrónico válido.</div>");
+                return false;
+            } else if (mensaje.trim() === '' || mensaje.length > 300) {
+                $("#check").html("<div class='alert alert-danger w-50 mx-auto text-center'>Por favor ingresa un mensaje válido (máximo 300 caracteres).</div>");
+                return false;
+            } else {
+                $("#check").html("<div class='alert alert-success w-50 mx-auto text-center'>Mensaje enviado correctamente.</div>");
+                return true;
+            }
         }
-    }
 
     $("#btnEnviar").click(function () {
         $("#formulario")[0].reset();
