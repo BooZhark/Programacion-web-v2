@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password
 
 # Create your models here.
 class Usuario(models.Model):
@@ -11,6 +12,10 @@ class Usuario(models.Model):
     password = models.CharField(max_length=30)
     direccion = models.CharField(max_length=50, blank=True, null=True)
     activo = models.BooleanField()
+
+    def save(self, *args, **kwargs):
+        self.password = make_password(self.password)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return (
@@ -29,3 +34,5 @@ class Producto(models.Model):
 
     def __str__(self):
         return f'{self.nombrep} -> {self.precio}'
+    
+

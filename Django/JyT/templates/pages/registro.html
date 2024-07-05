@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -51,59 +49,56 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <form action="" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5">
+            <form action="{% url 'registro' %}" method="post" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5" onsubmit="return validarFormulario()">
+                {% csrf_token %}
                 <div class="my-3">
                     <h4>Formulario de registro</h4>
                 </div>
                 <div class="form-floating w-50 mx-auto mb-3">
-                    <input type="text" class="form-control" id="txtRut" name="txtRut" placeholder="Ingrese su rut"
-                        required>
+                    <input type="text" class="form-control" id="txtRut" name="rut" placeholder="Ingrese su rut" required>
                     <label for="txtRut">Rut</label>
                 </div>
                 <div class="form-floating w-50 mx-auto mb-3">
-                    <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre"
-                        required>
+                    <input type="text" class="form-control" id="txtNombre" name="nombre" placeholder="Nombre" required>
                     <label for="txtNombre">Nombre</label>
                 </div>
                 <div class="row mx-auto">
                     <div class="col mb-3">
                         <div class="form-floating w-50 ms-auto">
-                            <input type="text" class="form-control" id="txtAppaterno" name="txtAppaterno"
-                                placeholder="Apellido paterno" required>
+                            <input type="text" class="form-control" id="txtAppaterno" name="apellido_paterno" placeholder="Apellido paterno" required>
                             <label for="txtAppaterno">Apellido paterno</label>
                         </div>
                     </div>
                     <div class="col mb-3">
                         <div class="form-floating w-50">
-                            <input type="text" class="form-control" id="txtApmaterno" name="txtApmaterno"
-                                placeholder="Apellido materno" required>
+                            <input type="text" class="form-control" id="txtApmaterno" name="apellido_materno" placeholder="Apellido materno" required>
                             <label for="txtApmaterno">Apellido materno</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-floating w-50 mx-auto mb-3">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Correo" required>
-                    <label for="txtMail">Correo</label>
+                    <label for="email">Correo</label>
                 </div>
                 <div class="form-floating w-50 mx-auto mb-3">
-                    <input type="number" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono"
-                        required>
+                    <input type="password" class="form-control" id="txtPassword" name="password" placeholder="Contraseña" required>
+                    <label for="txtPassword">Contraseña</label>
+                </div>
+                <div class="form-floating w-50 mx-auto mb-3">
+                    <input type="number" class="form-control" id="txtTelefono" name="telefono" placeholder="Telefono" required>
                     <label for="txtTelefono">Telefono</label>
                 </div>
                 <div class="form-floating w-50 mx-auto mb-3">
-                    <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" placeholder="Dirección"
-                        required>
+                    <input type="text" class="form-control" id="txtDireccion" name="direccion" placeholder="Dirección" required>
                     <label for="txtDireccion">Dirección</label>
                 </div>
                 <div id="check"></div>
                 <div class="w-50 mx-auto mb-3">
-                    <button type="button" id="btnEnviar" class="btn btn-outline-primary">Limpiar formulario</button>
-                    <button type="button" id="btnGenerar" class="btn btn-outline-success">Registrar</button>
+                    <button type="reset" id="btnEnviar" class="btn btn-outline-primary">Limpiar formulario</button>
+                    <button type="submit" id="btnGenerar" class="btn btn-outline-success">Registrar</button>
                 </div>
             </form>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -126,9 +121,8 @@
             <p>&copy; 2024 J&T GamingWelt</p>
         </div>
     </footer>
-<script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-<script src="{% static 'js/funciones.js' %}"></script>
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/funciones.js' %}"></script>
 </body>
-
 </html>

@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render, HttpResponse
 from .models import Producto, Usuario
 from .Carrito import Carrito
+from .forms import UsuarioForm
 
 def index(request):
     context = {
@@ -179,3 +180,24 @@ def sbnosotros(request):
 def tarjvideo(request):
     context = {}
     return render(request, "pages/tarjvideo.html", context)
+
+def registro(request):
+    if request.method == 'POST':
+        rut = request.POST.get('rut')
+        nombre = request.POST.get('nombre')
+        apellido_paterno = request.POST.get('apellido_paterno')
+        apellido_materno = request.POST.get('apellido_materno')
+        email = request.POST.get('email')
+        telefono = request.POST.get('telefono')
+        direccion = request.POST.get('direccion')
+        password = request.POST.get('password')
+
+        nuevo_usuario = Usuario(rut=rut, nombre=nombre, apellido_paterno=apellido_paterno,
+                                apellido_materno=apellido_materno, email=email, telefono=telefono,
+                                direccion=direccion, password=password, activo=True)
+        nuevo_usuario.save()
+
+        return redirect('index')
+
+    context = {}
+    return render(request, 'pages/registro.html', context)
