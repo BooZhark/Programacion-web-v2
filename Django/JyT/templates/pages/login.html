@@ -1,105 +1,113 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
     <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'index' %}">
-              <img src="{% static 'img/moai.png' %}" width="50" height="35" class="d-inline-block align-top" alt="Logo"> J&T GamingWelt
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a class="nav-link active me-2" aria-current="page" href="{% url 'index' %}">Inicio</a>
-                  </li>
-                  <li>
-                      <a class="nav-link active me-2" href="{% url 'Tienda' %}">Catalogo</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active me-2" href="{% url 'sbnosotros' %}">Sobre nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active me-2" href="{% url 'contacto' %}">Contacto</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active me-2" href="{% url 'login' %}">Iniciar Sesión</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#" id="carrito-img" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
-                          <img src="{% static 'img/carrito.png' %}" width="37" height="37" alt="Carrito de compras">
-                      </a>
-                  </li>
-              </ul>
-              <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-              </form>
-          </div>
-      </div>
-  </nav>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-      <div class="offcanvas-header">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/moai.png' %}" width="50" height="35" class="d-inline-block align-top" alt="Logo"> J&T GamingWelt
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active me-2" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                </li>
+                <li>
+                    <a class="nav-link active me-2" href="{% url 'Tienda' %}">Catalogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active me-2" href="{% url 'sbnosotros' %}">Sobre nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active me-2" href="{% url 'contacto' %}">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active me-2" href="{% url 'login' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="carrito-img" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+                        <img src="{% static 'img/carrito.png' %}" width="37" height="37" alt="Carrito de compras">
+                    </a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasLabel">Carrito de compras</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
+    </div>
+    <div class="offcanvas-body">
         <p>Tu carrito esta vacio</p>
-      </div>
     </div>
-    <div class="container mt-5">
-      <h1 class="text-center mb-4">Bienvenido de nuevo</h1>
-      <form>
-        <div class="mb-3">
+</div>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Bienvenido de nuevo</h1>
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-danger" role="alert">
+                  {{ message }}
+              </div>
+          {% endfor %}
+      {% endif %}
+      <div class="mb-3">
           <label for="inputEmail" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
+          <input type="email" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
           <label for="inputPassword" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="inputPassword">
-        </div>
-        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">¿Olvidó su contraseña?</button>
-      </form>
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+          <input type="password" class="form-control" id="inputPassword" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">¿Olvidó su contraseña?</button>
+  </form>  
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Recuperar contraseña</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Ingrese su email para recuperar su contraseña:</p>
-            <input type="email" class="form-control mb-2" placeholder="Correo electrónico">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Enviar</button>
-          </div>
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Recuperar contraseña</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Ingrese su email para recuperar su contraseña:</p>
+                <input type="email" class="form-control mb-2" placeholder="Correo electrónico">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Enviar</button>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="container mt-3 text-center">
-      <p>¿Aún no tienes cuenta? <a href="{% url 'registro' %}" class="btn btn-secondary">Registrarse</a>
-      </p>
+</div>
+<div class="container mt-3 text-center">
+    <p>¿Aún no tienes cuenta? <a href="{% url 'registro' %}" class="btn btn-secondary">Registrarse</a>
+    </p>
+</div>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 J&T GamingWelt</p>
     </div>
-    <footer>
-      <div class="container">
-          <p>&copy; 2024 J&T GamingWelt</p>
-      </div>
-  </footer>
-  <script src="{% static 'js/funciones.js' %}"></script>
-  <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-  </body>
+</footer>
+<script src="{% static 'js/funciones.js' %}"></script>
+<script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
 </html>

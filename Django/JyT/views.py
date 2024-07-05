@@ -1,13 +1,20 @@
 from django.shortcuts import redirect, render, HttpResponse
 from .models import Producto, Usuario
 from .Carrito import Carrito
-from .forms import UsuarioForm
+from django.contrib.auth.hashers import check_password
+from django.contrib import messages
 
 def index(request):
-    context = {
-        "user": "",
-    }
-    return render(request, "pages/index.html", context)
+    user_id = request.session.get('user_id')
+    if user_id:
+        try:
+            usuario_autenticado = Usuario.objects.get(pk=user_id)
+            nombre_usuario = usuario_autenticado.nombre
+            return render(request, 'pages/index.html', {'nombre_usuario': nombre_usuario})
+        except Usuario.DoesNotExist:
+            pass
+    
+    return render(request, 'pages/index.html')
 
 def contacto(request):
     context = {}
@@ -201,3 +208,28 @@ def registro(request):
 
     context = {}
     return render(request, 'pages/registro.html', context)
+
+def login_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        try:
+            user = Usuario.objects.get(email=email)
+        except Usuario.DoesNotExist:
+            user = None
+        
+        if user and check_password(password, user.password):
+            request.session['user_id'] = user.pk 
+            return redirect('index')
+        else:
+            messages.error(request, 'Credenciales inválidas. Por favor, inténtalo de nuevo.')
+            return render(request, 'pages/login.html')
+    else:
+        return render(request, 'pages/login.html')
+    
+def logout_view(request):
+    if 'user_id' in request.session:
+        del request.session['user_id']
+
+    return redirect('index') 
