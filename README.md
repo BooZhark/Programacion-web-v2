@@ -8,6 +8,6 @@ J&T GamingWelt plataforma de comercio electrico especializada en la venta de pro
 - [@Juan Guerrero](https://www.github.com/BooZhark)
 - [@Tomas Escalona](https://www.github.com/Apolo13241)
 
-![S](JyT/static/img/dancing-dog.gif)
+![S](/Django/JyT/static/img/dancing-dog.gif)
 
 
