@@ -30,7 +30,7 @@ class Producto(models.Model):
     nombrep = models.CharField(max_length=100)
     precio = models.IntegerField()
     descripcion = models.TextField(max_length=500)
-    imagen = models.ImageField(upload_to='productos', default='no_imagen.png') #no_imagen es la imagen por defecto, falta añadirla
+    imagen = models.ImageField(upload_to='productos', default='loading_cat.jpg') #no_imagen es la imagen por defecto, falta añadirla
 
     def __str__(self):
         return f'{self.nombrep} -> {self.precio}'
